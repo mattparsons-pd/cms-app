@@ -43,10 +43,11 @@ Check out the examples directory for the metadata json output file and previousl
     ```
 
 4. Create `.env` config file:
+    For Linux disto use:
     ```bash
     echo -e "CMS_DATASTORE_URL=https://data.cms.gov/data.json\nOUTPUT_DIR=hospital_datasets\nMAX_WORKERS=5" > .env
     ```
-
+    For command prompt use:
     ```cmd
     (
     echo CMS_DATASTORE_URL=https://data.cms.gov/data.json
@@ -54,7 +55,7 @@ Check out the examples directory for the metadata json output file and previousl
     echo MAX_WORKERS=5
     ) > .env
     ```
-
+    For PowerShell use:
     ```powershell
     @"
     CMS_DATASTORE_URL=https://data.cms.gov/data.json
