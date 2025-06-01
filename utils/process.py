@@ -30,7 +30,7 @@ class Process:
             return datetime.fromisoformat(json.load(f).get("last_run"))
     
     @property   
-    def processed_files(self) -> list[str]:
+    def processed_files(self) -> list[dict]:
         if not os.path.exists(self.ATTR_META_FILENAME):
             return None
         with open(self.ATTR_META_FILENAME, "r") as f:
@@ -104,7 +104,7 @@ class Process:
         except Exception as e:
             logger.error(f"Failed to process {url}: {e}")
 
-    def run(self):
+    def run(self) -> None:
         logger.info("Starting processing run.")
         metadata = self.fetch_metadata_theme()
         last_run = self.last_run_time
