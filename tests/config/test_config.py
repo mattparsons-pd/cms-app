@@ -1,4 +1,3 @@
-import os
 import tempfile
 from pathlib import Path
 from config import Configuration
@@ -19,9 +18,9 @@ def test_configuration_reads_env_values():
     # Test
     config = Configuration(dotenv_path=str(temp_env_path))
 
-    assert config.cms_datastore_url == "https://example.com/data.json"
-    assert config.output_dir == "test_output"
-    assert config.metadata_file == "test_metadata.json"
-    assert config.max_workers == 10
+    assert config.CMS_DATASTORE == "https://example.com/data.json"
+    assert config.OUTPUT_DIR == "test_output"
+    assert config.METADATA_FILE == "test_metadata.json"
+    assert config.MAX_WORKERS == 10
 
     temp_dir.cleanup()
