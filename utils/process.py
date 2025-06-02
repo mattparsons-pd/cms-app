@@ -63,7 +63,7 @@ class Process:
         with open(output_path, "w") as f:
             json.dump(data, f, indent=2)
 
-    def fetch_metadata_theme(self) -> list[dict]:
+    def get_metadata_theme(self) -> list[dict]:
         logger.info("Fetching CMS metadata...")
         response = requests.get(self.url)
         response.raise_for_status()
@@ -131,7 +131,7 @@ class Process:
 
     def run(self) -> None:
         logger.info("Starting processing run.")
-        metadata = self.fetch_metadata_theme()
+        metadata = self.get_metadata_theme()
         last_run = os.path.exists(self.METADATA_PATH)
 
         if not last_run:
