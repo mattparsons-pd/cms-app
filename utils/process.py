@@ -132,7 +132,8 @@ class Process:
     def run(self) -> None:
         logger.info("Starting processing run.")
         metadata = self.get_metadata_theme()
-        last_run = os.path.exists(self.METADATA_PATH)
+        last_run_meta = os.path.join(self.output_dir,self.LAST_RUN_DATE,"runs",self.ATTR_META_FILENAME)
+        last_run = os.path.exists(last_run_meta)
 
         if not last_run:
             logger.info("First-time run: processing all datasets matching theme.")
