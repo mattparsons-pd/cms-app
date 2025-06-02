@@ -153,5 +153,5 @@ class Process:
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             executor.map(self.download_and_process_csv, urls)
 
-        self.save_run_time(processed_files=metadata)
+        self.save_run_time(processed_files=modified_datasets)
         logger.info("Job completed.")
