@@ -4,7 +4,7 @@ This repository includes a `Process` class that automates the daily download and
 
 The job supports parallel downloads, automatic snake_case conversion of column headers, and tracks the last successful run using a metadata file that is created locally within the apps environment.
 
-Check out the examples directory for the metadata json output file and previously processed CSV files!
+Check out the examples directory for the metadata json output file and a sample of previously processed CSV files!
 
 ---
 
@@ -13,7 +13,7 @@ Check out the examples directory for the metadata json output file and previousl
 1. Downloads CMS metadata from `CMS_DATASTORE_URL`
 2. Filters datasets based on the configured theme (e.g., `"Hospitals"`)
 3. Identifies all CSV distributions in those datasets
-4. Skips any that haven't changed since the last recorded `last_run`
+4. Skips any that haven't changed since the last recorded `modified`
 5. Downloads and processes each CSV:
    - Converts headers to `snake_case`
    - Saves the cleaned CSV to `OUTPUT_DIR`
